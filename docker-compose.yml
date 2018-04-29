@@ -1,0 +1,26 @@
+version: '3.6'
+services:
+  visitor_counter_app1:
+    build: visitor_counter_app/.
+    image: visitor_counter_app:v1.0.0
+    ports:
+    - "8000:80"
+    links:
+    - redis
+    environment:
+      CONTAINER_NAME: boom
+  visitor_counter_app2:
+    build: visitor_counter_app/.
+    image: visitor_counter_app:v1.0.0
+    ports:
+    - "8000:80"
+    links:
+    - redis
+    environment:
+      CONTAINER_NAME: bahhh
+  nginx:
+    image: nginx:latest
+    volumes:
+      - "./nginx/default.conf:/etc/nginx/conf.d/default.conf"
+  redis:
+    image: redis

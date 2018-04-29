@@ -21,6 +21,6 @@ const server = http.createServer(function (req, res) {
 
 });
 
-server.listen(8000, function () {
+server.listen(process.env.PORT, function () {
     console.log(`Server Started at http://${server.address().address}:${server.address().port}`);
 });

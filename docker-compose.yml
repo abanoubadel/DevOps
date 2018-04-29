@@ -4,20 +4,22 @@ services:
     build: visitor_counter_app/.
     image: visitor_counter_app:v1.0.0
     ports:
-    - "8000:80"
+    - "8001:80"
     links:
     - redis
     environment:
       CONTAINER_NAME: boom
+      PORT: 8001
   visitor_counter_app2:
     build: visitor_counter_app/.
     image: visitor_counter_app:v1.0.0
     ports:
-    - "8000:80"
+    - "8002:80"
     links:
     - redis
     environment:
       CONTAINER_NAME: bahhh
+      PORT: 8002
   nginx:
     image: nginx:latest
     volumes:

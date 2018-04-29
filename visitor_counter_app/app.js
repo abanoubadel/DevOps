@@ -13,7 +13,7 @@ const server = http.createServer(function (req, res) {
 
     redisClinet.incr('visits', function (e, n) {
         res.writeHead(200, {'Content-Type': 'application/json'});
-        res.write(`Hello From ${process.env.NAME} \n\n`);
+        res.write(`Hello From ${process.env.CONTAINER_NAME} \n\n`);
         res.write(`You are visitor #${n}`);
         console.log(`visitor counter ${n}`);
         res.end();

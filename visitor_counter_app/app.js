@@ -1,7 +1,10 @@
 const http = require('http');
 const redis = require('redis');
 
-const redisClinet = redis.createClient();
+const redisClinet = redis.createClient({
+    host: process.env.REDIS_HOST,
+    port: process.env.REDIS_PORT || 6379,
+});
 
 const server = http.createServer(function (req, res) {
 

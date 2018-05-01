@@ -10,6 +10,7 @@ const server = http.createServer(function (req, res) {
 
     if (req.url === '/favicon.ico') {
         res.writeHead(200, {'Content-Type': 'image/x-icon'} );
+        console.log('favicon request');
         res.end();
         return;
     }

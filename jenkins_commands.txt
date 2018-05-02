@@ -1,0 +1,5 @@
+cd visitor_counter_app
+docker run --rm -v $(pwd):/root node:boron /bin/bash -c "cd /root; npm i; npm test"
+docker build --no-cache -t visitor_counter_app:build-${BUILD_NUMBER} .
+cd ..
+docker-compose up -d

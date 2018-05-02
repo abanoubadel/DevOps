@@ -19,7 +19,12 @@ const server = http.createServer(function (req, res) {
         res.writeHead(200, {'Content-Type': 'application/json'});
         res.write(`Hello From ${process.env.CONTAINER_NAME} \n\n`);
         res.write(`You are visitor #${n}`);
-        res.write(`new feature 1`);
+        res.write(`\n\n new feature 1`);
+        res.write(`\n\n new feature 2`);
+        res.write(`\n\n new feature 3`);
+        res.write(`\n\n new feature 4`);
+        res.write(`\n\n new feature 5`);
+        res.write(`\n\n new feature 6`);
         console.log(`visitor counter ${n}`);
         res.end();
     });
